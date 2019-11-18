@@ -1,5 +1,5 @@
 # автоматизация сборки с gulp 4
-сборка html-js-scss-svg
+сборка pug-js-scss-svg
 
 Установка: `npm i`.
 
