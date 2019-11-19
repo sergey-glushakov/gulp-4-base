@@ -173,7 +173,7 @@ exports.scripts = scripts;
 exports.scriptsVendor = scriptsVendor;
 exports.preppug = preppug;
 exports.images = images;
-exports.svg = svg; // запускаем для сборки svg спрайта вначале проекта
+exports.svg = svg;
 exports.clean = clean;
 exports.watch = watch;
 
