@@ -1,0 +1,88 @@
+input::-ms-clear {
+  display: none;
+}
+
+html.ie9 * {
+  border-radius: 0 !important;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: $font-size;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: $bg;
+  font-family: $font;
+  color: $text;
+  font-weight: 400;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+
+// настройка классов для smartgrid
+.page {
+  flex-grow: 1;
+}
+//
+.container {
+  @include wrapper;
+}
+
+.row {
+  @include row-flex;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  font: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input, textarea {
+  background: none;
+  border: none;
+  outline: none;
+  font: inherit;
+}

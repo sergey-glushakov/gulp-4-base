@@ -1,4 +1,24 @@
-@import 'variables.scss';
-@import 'mixins/*.scss';
 
-@import 'global.scss';
+//layout
+/*-----------------LAYOUT-VARIABLES-------------*/
+@import "layout/variables";
+/*-----------------LAYOUT-FONTS-----------------*/
+@import "layout/fonts";
+/*-----------------LAYOUT-NORMALIZE-------------*/
+@import "layout/normalize";
+/*-----------------LAYOUT-SMART-GRID------------*/
+@import "layout/_smart-grid";
+/*-----------------LAYOUT-AJUSTMENT-------------*/
+@import "layout/adjustment";
+
+//common
+/*-----------------LAYOUT-COMMON----------------*/
+@import "common/common";
+
+//blocks
+/*-----------------BLOCKS-HEADER---------------*/
+@import "blocks/header";
+/*-----------------BLOCKS-PAGE-----------------*/
+@import "blocks/page";
+/*-----------------BLOCKS-FOOTER---------------*/
+@import "blocks/footer";

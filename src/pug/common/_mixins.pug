@@ -1,0 +1,15 @@
+mixin nav(className, items, activeItem)
+    nav(class=`${className}`)
+        ul(class=`${className}__list`)
+            each item, indx in items
+                li(class=`${className}__item` + ((indx === activeItem) ? ` ${className}__item_active` : ''))
+                    a(class=`${className}__link` href='#')= item
+
+
+mixin image(imagePath, imageAlt, imageClass)
+    img(src=`img/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+
+mixin icon(iconName, iconClass)
+    svg(class=`${iconClass}`)
+        use(xlink:href=`img/sprite.svg#${iconName}`)
