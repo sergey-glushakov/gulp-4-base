@@ -27,6 +27,9 @@ const cheerio = require("gulp-cheerio"); // добавить???
 const svgmin = require("gulp-svgmin");
 const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
+const gulpIf = require("gulp-if");
+
+const isDevelopment = false;
 
 const paths = {
     src: "./src/", // paths.src
@@ -66,15 +69,16 @@ function styles() {
         gulp
             .src(paths.src + "scss/main.scss")
             .pipe(plumber())
-            .pipe(sourcemaps.init())
+            .pipe(gulpIf(isDevelopment, sourcemaps.init()))
             //.pipe(sassGlob())
             .pipe(sass()) // { outputStyle: 'compressed' }
             //.pipe(groupMediaQueries())
             .pipe(postcss([autoprefixer({ browsers: ["last 2 version"] })]))
             //.pipe(cleanCSS())
             //.pipe(rename({ suffix: ".min" }))
-            .pipe(sourcemaps.write("./"))
+            .pipe(gulpIf(isDevelopment, sourcemaps.write("./")))
             .pipe(gulp.dest(paths.build + "css/"))
+            .pipe(browserSync.stream())
     );
 }
 
@@ -125,7 +129,7 @@ function images() {
         gulp
             .src(paths.src + "img/**/*.{jpg,jpeg,png,gif,svg}")
             .pipe(newer(paths.build + "img/"))
-            //.pipe(imagemin()) // если картинок будет много, то и времени будет уходить много
+            //.pipe(imagemin({optimizationLevel: 3, progressive: true, interlaced: true})) // если картинок будет много, то и времени будет уходить много
             .pipe(gulp.dest(paths.build + "img/"))
     );
 }
