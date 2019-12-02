@@ -17,11 +17,12 @@ html(lang="ru")
         link(rel="stylesheet", href="./css/main.min.css")
     body
         .wrapper
-            include blocks/_header
+
             .page
+                include blocks/header
                 //.page-content
                 block content
-            include blocks/_footer
+            include blocks/footer
 
         script(src='js/vendors.min.js')
         script(src='js/script.min.js')
