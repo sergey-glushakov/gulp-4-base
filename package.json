@@ -5,7 +5,9 @@
     "author": "Sergey Glushakov",
     "license": "ISC",
     "scripts": {
-        "start": "gulp"
+        "start": "gulp",
+        "lint": "eslint ./src",
+        "lint:fix": "eslint ./src --fix"
     },
     "devDependencies": {
         "autoprefixer": "^8.5.1",

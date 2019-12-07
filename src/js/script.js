@@ -1,7 +1,9 @@
-'use strict';
+/* eslint-disable max-len */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-undef */
 
-let pos; let 
-colors;
+let pos;
+let colors;
 const moveSpeed = 0.4;
 const moveScale = 800;
 
