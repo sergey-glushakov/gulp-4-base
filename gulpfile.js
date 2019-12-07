@@ -29,7 +29,7 @@ const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
 const gulpIf = require("gulp-if");
 
-const isDevelopment = false;
+const isDevelopment = true;
 
 const paths = {
     src: "./src/", // paths.src
@@ -75,7 +75,8 @@ function styles() {
             //.pipe(groupMediaQueries())
             .pipe(postcss([autoprefixer({ browsers: ["last 2 version"] })]))
             //.pipe(cleanCSS())
-            //.pipe(rename({ suffix: ".min" }))
+            .pipe(gulpIf(!isDevelopment, cleanCSS()))
+            .pipe(rename({ suffix: ".min" }))
             .pipe(gulpIf(isDevelopment, sourcemaps.write("./")))
             .pipe(gulp.dest(paths.build + "css/"))
             .pipe(browserSync.stream())
@@ -186,7 +187,9 @@ function serve() {
     browserSync.init({
         server: {
             baseDir: paths.build
-        }
+        },
+        open: false, // http://localhost:3000/ отключаем открытие в новом окне
+        notify: false // отключаем уведомления browser-sync в правом верхнем углу
     });
     browserSync.watch(paths.build + "**/*.*", browserSync.reload);
 }

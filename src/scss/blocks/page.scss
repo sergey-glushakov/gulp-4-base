@@ -1,0 +1,9 @@
+.my-love {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-pic {
+        display: block;
+        width: 560px;
+    }
+}
