@@ -7,7 +7,7 @@
     "scripts": {
         "start": "gulp",
         "lint": "eslint ./src",
-        "lint:fix": "eslint ./src --fix"
+        "lint:fix": "eslint ./src --fix --color"
     },
     "devDependencies": {
         "autoprefixer": "^8.5.1",
@@ -42,6 +42,8 @@
         "gulp-svgmin": "^1.2.4",
         "gulp-svgstore": "^6.1.1",
         "gulp-uglify": "^3.0.0",
+        "husky": "^3.1.0",
+        "lint-staged": "^9.5.0",
         "normalize.css": "^8.0.1",
         "prettier": "^1.19.1",
         "smart-grid": "^2.1.2"
@@ -55,5 +57,16 @@
         "slick-slider": "^1.8.2",
         "svg4everybody": "^2.1.9",
         "swiper": "^5.2.0"
+    },
+    "husky": {
+        "hooks":{
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.js": [
+            "npm run lint:fix",
+            "git add"
+        ]
     }
 }
