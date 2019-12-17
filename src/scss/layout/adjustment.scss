@@ -86,3 +86,10 @@ input, textarea {
   outline: none;
   font: inherit;
 }
+
+header {
+    flex-shrink: 0;
+}
+footer{
+    flex-shrink: 0;
+}
